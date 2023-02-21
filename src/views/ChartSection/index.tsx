@@ -76,7 +76,11 @@ const ChartSection = () => {
         borderRadius: '5px',
         boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
         margin: '60px 0',
-        padding: '45px',
+        padding: {
+          lg: '45px',
+          md: '30px',
+          xs: '5px',
+        },
         width: '100%',
       }}
     >

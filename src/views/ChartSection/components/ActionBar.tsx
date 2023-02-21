@@ -35,12 +35,23 @@ const ActionBar = ({
   <Box
     sx={{
       borderColor: 'divider',
-      display: 'flex',
-      justifyContent: 'space-between',
-      marginBottom: '30px',
+      display: 'grid',
+      gridTemplateColumns: {
+        lg: '1fr 1fr',
+        md: '1fr 1fr',
+        xs: '1f',
+      },
+      marginBottom: '50px',
     }}
   >
-    <Box>
+    <Box
+      sx={{
+        textAlign: {
+          md: 'left',
+          xs: 'center',
+        },
+      }}
+    >
       <LocalizationProvider
         dateAdapter={AdapterDayjs}
         adapterLocale="pl-PL"
@@ -54,6 +65,12 @@ const ActionBar = ({
             <TextField
               {...params}
               name="date"
+              sx={{
+                margin: {
+                  md: 0,
+                  xs: '20px',
+                },
+              }}
             />
           )}
         />
@@ -67,7 +84,10 @@ const ActionBar = ({
               {...params}
               name="date"
               sx={{
-                marginLeft: '15px',
+                margin: {
+                  md: '0px 0px 0px 15px',
+                  xs: '0px 0px 15px 0px',
+                },
               }}
             />
           )}
@@ -80,6 +100,14 @@ const ActionBar = ({
       textColor="primary"
       indicatorColor="primary"
       aria-label="primary tabs"
+      sx={{
+        '& .MuiTabs-flexContainer': {
+          justifyContent: {
+            md: 'end',
+            xs: 'space-around',
+          },
+        },
+      }}
     >
       <Tab
         value={DAY}
