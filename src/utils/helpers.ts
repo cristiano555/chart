@@ -14,19 +14,23 @@ export const removeTimeFromOperation = (rawRow: DSVRowString<keyof OperationType
       transfers_count: +rawRow.transfers_count,
     };
 
-    const dateModifier = operation.date.split(' ');
+    const [datePart] = operation.date.split(' ');
 
-    operation.date = dateModifier[0];
+    operation.date = datePart;
 
     return operation;
   }
 
-  return new Error('CSV file has');
+  return new Error('CSV file doesnt have proper values');
 };
 
-export const limitDate = (startDate: Date, endDate: Date, operations: OperationsType) => {
-  const startDateStr = startDate.toISOString().split('T')[0];
-  const endDateStr = endDate.toISOString().split('T')[0];
+export const limitDate = (
+  startDate: Date | null,
+  endDate: Date | null,
+  operations: OperationsType
+) => {
+  const startDateStr = startDate ? startDate.toISOString().split('T')[0] : '';
+  const endDateStr = endDate ? endDate.toISOString().split('T')[0] : '';
   const limitedOperations = operations.filter(
     (operation: OperationType) => operation.date >= startDateStr && operation.date <= endDateStr
   );

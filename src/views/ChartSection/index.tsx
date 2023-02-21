@@ -27,10 +27,6 @@ const ChartSection = () => {
     frequency,
     setFrequency,
   ] = useState<string>(DAY);
-  // const [
-  //   data,
-  //   setData,
-  // ] = useState<Dispatch<SetStateAction<OperationsType>>>([]);
   const [
     data,
     setData,
@@ -50,7 +46,7 @@ const ChartSection = () => {
 
   useEffect(() => {
     csv(dataFromCsvFile, removeTimeFromOperation)
-      .then(operations => limitDate(startDate, endDate, operations))
+      .then((operations: OperationsType) => limitDate(startDate, endDate, operations))
       .then(operations => {
         if (frequency === MONTH) {
           setData(mergeBySameDate(operations));
