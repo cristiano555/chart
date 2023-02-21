@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { color } from 'utils/constants';
 import { OperationsType } from 'utils/types';
 
 type ChartPropsType = {
@@ -25,6 +26,9 @@ const Chart = ({ data }: ChartPropsType) => (
       <Legend
         verticalAlign="top"
         iconType="plainline"
+        wrapperStyle={{
+          marginTop: '-15px',
+        }}
       />
       <XAxis
         dataKey="date"
@@ -36,7 +40,7 @@ const Chart = ({ data }: ChartPropsType) => (
           fontFamily: 'Roboto',
           fontSize: '12px',
           fontWeight: '300',
-          stroke: '#9b9b9b',
+          stroke: color.chartLine,
           strokeWidth: 0.5,
         }}
       />
@@ -50,7 +54,7 @@ const Chart = ({ data }: ChartPropsType) => (
           fontFamily: 'Roboto',
           fontSize: '12px',
           fontWeight: '300',
-          stroke: '#9b9b9b',
+          stroke: color.chartLine,
           strokeWidth: 0.5,
         }}
       />
@@ -65,24 +69,24 @@ const Chart = ({ data }: ChartPropsType) => (
           fontFamily: 'Roboto',
           fontSize: '12px',
           fontWeight: '300',
-          stroke: '#9b9b9b',
+          stroke: color.chartLine,
           strokeWidth: 0.5,
         }}
       />
       <Tooltip
         contentStyle={{
-          border: '1px solid #e5e5e5',
+          border: `1px solid ${color.thinBorder}`,
         }}
       />
       <Area
         yAxisId="left"
         type="monotone"
         dataKey="transfers_count"
-        stroke="#1ece9f"
+        stroke={color.secondary}
         strokeWidth={2}
         dot={false}
         fillOpacity={0.5}
-        fill="#92e3a9"
+        fill={color.fillChart}
         activeDot={{ r: 6 }}
         name="Transfers count"
       />
