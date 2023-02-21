@@ -1,10 +1,7 @@
 import {
   Area,
   AreaChart,
-  // CartesianGrid,
   Legend,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -75,15 +72,7 @@ const Chart = ({ data }: ChartPropsType) => (
       <Tooltip
         contentStyle={{
           border: '1px solid #e5e5e5',
-          // backgroundColor: 'none',
-          // position: 'absolute',
-          // left: 0,
-          // top: 0,
         }}
-        // position={{
-        //   x: 0,
-        //   y: 0,
-        // }}
       />
       <Area
         yAxisId="left"

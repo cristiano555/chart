@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { color } from 'utils/constants';
-// import {
-//   css,
-//   Global,
-// } from '@emotion/react';
 import {
   createTheme,
   ThemeProvider,
@@ -47,26 +43,6 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Global
-        styles={css`
-          @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-          html {
-            font-family: 'Roboto', sans-serif;
-          }
-          @supports (font-variation-settings: normal) {
-            html {
-              font-family: 'Roboto', sans-serif;
-            }
-          }
-
-          html,
-          body {
-            margin: 0;
-            padding: 0;
-            background-color: ${color.background};
-          }
-        `}
-      /> */}
       <App />
     </ThemeProvider>
   </React.StrictMode>

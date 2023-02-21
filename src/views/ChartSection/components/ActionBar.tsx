@@ -20,8 +20,6 @@ type ActionBarPropsType = {
   handleTabs: (event: React.SyntheticEvent, newValue: string) => void;
   startDate: Date | null;
   endDate: Date | null;
-  // setStartDate: (a: Date) => Date;
-  // setEndDate: (a: Date) => Date;
   setStartDate: Dispatch<SetStateAction<Date | null>>;
   setEndDate: Dispatch<SetStateAction<Date | null>>;
 };

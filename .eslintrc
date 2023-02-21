@@ -273,7 +273,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts", ".tsx", ".json"]
+        "extensions": [".js", ".ts", ".tsx", ".json", ".csv"]
       }
     },
     "import/internal-regex": "^(@/constants|@/interfaces|@/core|@/features|@/common|@/routes|@/utils|@/store|@/actions|@/reducers|@/selectors|@/themes|@/slices)"
